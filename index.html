@@ -1,1 +1,112 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bino - Персональная карточка</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем пиксельные шрифты от Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="retro-body">
+
+    <div class="site-container">
+        <!-- Шапка: заголовок и иконка черепа -->
+        <header class="header">
+            <span class="skull-icon">💀</span>
+            <h1>welcome to my website</h1>
+        </header>
+
+        <!-- Главный блок контента с рамкой -->
+        <main class="main-content-frame">
+            <!-- Левый сайдбар -->
+            <nav class="sidebar-left">
+                <ul>
+                    <li><a href="#" class="sidebar-link active">home</a></li>
+                    <li><a href="#" class="sidebar-link">projects</a></li>
+                    <li><a href="#" class="sidebar-link">ramblings</a></li>
+                    <li><a href="#" class="sidebar-link">links</a></li>
+                    <li><a href="#" class="sidebar-link">apps & games</a></li>
+                    <li><a href="#" class="sidebar-link">guestbook</a></li>
+                </ul>
+            </nav>
+
+            <!-- Основная область текста -->
+            <div class="text-area-main">
+                <p>new domain, new website, new me. once again i find myself writing a website from scratch, this time with the goal to use little to no javascript. consider the site in beta, i still have a lot of ideas that will pop up over the next weeks.</p>
+                
+                <p>i'm using this index page to keep track of my to-dos for this page. i'd say that most of the functionality i wanted is there :] at some point i'll clean this up... right?</p>
+
+                <h2>features</h2>
+                <ul class="features-list">
+                    <li>my projects</li>
+                    <li>links to resources / apps i like</li>
+                    <li>blog</li>
+                    <li>ripped webapps / games</li>
+                    <li>guestbook</li>
+                    <li>badges</li>
+                </ul>
+
+                <h2>shit to fix</h2>
+                <ul class="fix-list">
+                    <li>build date on guestbook page is always current</li>
+                </ul>
+
+                <h2>future ideas</h2>
+                <ul class="ideas-list">
+                    <li>more eye candy</li>
+                    <li>comments on the blog</li>
+                    <li>links to my friends</li>
+                    <li>page transitions?</li>
+                    <li>custom cursor</li>
+                </ul>
+            </div>
+        </main>
+
+        <!-- Блок "последнее обновление" -->
+        <div class="last-updated-box">
+            <span>last updated:</span>
+            <span class="updated-date">21.05.2026</span>
+        </div>
+
+        <!-- Нижний ряд пиксельных бейджей -->
+        <footer class="badges-row">
+            <img src="https://via.placeholder.com/88x31/222222/555555?text=AnythingButChrome" alt="Badge">
+            <img src="https://via.placeholder.com/88x31/222222/555555?text=Defective" alt="Badge">
+            <img src="https://via.placeholder.com/88x31/222222/555555?text=PrivacyNow" alt="Badge">
+            <img src="https://via.placeholder.com/88x31/222222/555555?text=NoTracking" alt="Badge">
+            <img src="https://via.placeholder.com/88x31/222222/555555?text=ClassicHTML" alt="Badge">
+            <img src="https://via.placeholder.com/88x31/222222/555555?text=NoWeb3" alt="Badge">
+            <img src="https://via.placeholder.com/88x31/222222/555555?text=Astro" alt="Badge">
+            <img src="https://via.placeholder.com/88x31/222222/555555?text=bitwarden" alt="Badge">
+            <img src="https://via.placeholder.com/88x31/222222/555555?text=caddy" alt="Badge">
+            <img src="https://via.placeholder.com/88x31/222222/555555?text=Hetzner" alt="Badge">
+            <img src="https://via.placeholder.com/88x31/222222/555555?text=JetBrains" alt="Badge">
+            <img src="https://via.placeholder.com/88x31/222222/555555?text=uBlock" alt="Badge">
+        </footer>
+    </div>
+
+    <!-- Индикатор устройства для проверки (позже его можно будет удалить) -->
+    <div id="device-indicator" style="position: fixed; bottom: 10px; right: 10px; background: #b84024; color: #fff; padding: 5px 10px; font-family: monospace; font-size: 12px; z-index: 9999; border: 1px solid #fff;">
+        определение...
+    </div>
+
+    <script>
+        function checkDevice() {
+            const width = window.innerWidth;
+            const indicator = document.getElementById('device-indicator');
+            
+            if (width <= 768) {
+                indicator.innerText = "phone (" + width + "px)";
+            } else {
+                indicator.innerText = "pc (" + width + "px)";
+            }
+        }
+        
+        checkDevice();
+        window.addEventListener('resize', checkDevice);
+    </script>
+</body>
+</html>
