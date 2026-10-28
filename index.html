@@ -46,14 +46,15 @@
             text-align: center;
             font-size: 20px;
             color: rgba(230, 237, 243, 0.7);
-            display: none; /* по умолчанию скрыто, управляется скриптом */
+            display: none;
             pointer-events: none;
         }
 
-        /* --- ОСНОВНОЙ КОНТЕНТ (в левой части) --- */
+        /* --- ОСНОВНОЙ КОНТЕНТ (для мобильной версии) --- */
         .main-content {
             padding-left: 40px;
             max-width: 600px;
+            display: none;
         }
 
         .text-small {
@@ -89,8 +90,8 @@
     <!-- Сообщение по центру, если открыто не на телефоне -->
     <div id="desktop-warning" class="center-warning">under construction, switch to phone look</div>
 
-    <!-- Основной контент слева -->
-    <div class="main-content">
+    <!-- Основной контент слева (только для телефонов) -->
+    <div id="main-content" class="main-content">
         <div class="text-small">b1no</div>
         <div class="text-huge-bold">Bino</div>
         <div class="text-description">
@@ -103,15 +104,19 @@
             const width = window.innerWidth;
             const sizeIndicator = document.getElementById('screen-size');
             const desktopWarning = document.getElementById('desktop-warning');
+            const mainContent = document.getElementById('main-content');
             
             // Выводим размер экрана в правый верхний угол
             sizeIndicator.innerText = width + "px";
             
-            // Проверяем условие для ПК / телефона (порог 768px)
+            // Если шире 768px (ПК) — показываем только предупреждение по центру
             if (width > 768) {
                 desktopWarning.style.display = "block";
+                mainContent.style.display = "none";
             } else {
+                // Если телефон — скрываем предупреждение и показываем сайт
                 desktopWarning.style.display = "none";
+                mainContent.style.display = "block";
             }
         }
         
@@ -119,5 +124,4 @@
         window.addEventListener('resize', updateLayout);
     </script>
 </body>
-    </html>
-    
+</html>
