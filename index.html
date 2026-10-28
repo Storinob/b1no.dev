@@ -76,6 +76,26 @@
             font-size: 16px;
             color: rgba(230, 237, 243, 0.8);
             line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* --- СТИЛИ ДЛЯ БЛОКА ССЫЛОК --- */
+        .social-links {
+            font-size: 14px;
+            color: rgba(230, 237, 243, 0.4);
+            text-transform: lowercase;
+            letter-spacing: 1px;
+        }
+
+        .social-links a {
+            color: rgba(230, 237, 243, 0.7);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: #e6edf3;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -97,6 +117,10 @@
         <div class="text-description">
             custom software developer, script maker & system enthusiast based in poland. building lightweight tools and game modifications.
         </div>
+        <!-- Раздел ссылок -->
+        <div class="social-links">
+            <a href="#" target="_blank">github</a> | <a href="#" target="_blank">discord</a>
+        </div>
     </div>
 
     <script>
@@ -106,15 +130,12 @@
             const desktopWarning = document.getElementById('desktop-warning');
             const mainContent = document.getElementById('main-content');
             
-            // Выводим размер экрана в правый верхний угол
             sizeIndicator.innerText = width + "px";
             
-            // Если шире 768px (ПК) — показываем только предупреждение по центру
             if (width > 768) {
                 desktopWarning.style.display = "block";
                 mainContent.style.display = "none";
             } else {
-                // Если телефон — скрываем предупреждение и показываем сайт
                 desktopWarning.style.display = "none";
                 mainContent.style.display = "block";
             }
@@ -124,4 +145,5 @@
         window.addEventListener('resize', updateLayout);
     </script>
 </body>
-</html>
+                </html>
+                
