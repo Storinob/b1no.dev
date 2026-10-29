@@ -25,3 +25,11 @@
         padding-left: 0;
     }
       }
+
+.profile-avatar {
+    width: 90px;           
+    height: 90px;
+    border-radius: 50%;    
+    object-fit: cover;     
+    flex-shrink: 0;        
+}
